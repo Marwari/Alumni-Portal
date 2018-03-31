@@ -1,0 +1,27 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        {% include "head.html"%}
+
+        <title>Timeline</title>
+    </head>
+    <body>
+        {% include "loggedin-navbar.html" %}
+
+        <!--Display all posts on feed.-->
+        {% include "display_posts.html" %}
+
+    <!--footer for feeds [footer that is not fixed]-->
+        <footer id="footer">
+    <div class="footer-copyright">
+        <div class="navbar navbar-inner">
+            <p class="muted credit text-center panel-footer">
+                A Bharat Chaudhary Production.
+            </p>
+        </div>
+    </div>
+</footer>
+        <!--footer ends here-->
+        {% include "scripts.html" %}
+    </body>
+</html>

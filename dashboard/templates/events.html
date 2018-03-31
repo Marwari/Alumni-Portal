@@ -1,0 +1,147 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        {% include "head.html"%}
+
+        <title>Events</title>
+    </head>
+    <body>
+        {% include "loggedin-navbar.html" %}
+
+        <!--Display all posts on feed.-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="sidebar-nav">
+            <div class="well" style="width:300px; padding: 8px 0;">
+        		<ul class="nav nav-list">
+        		  <li><a href="/"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+        		  <li><a href="/post"><i class="glyphicon glyphicon-pencil"></i> Add A Post</a></li>
+                  <li class="active"><a href="/events"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
+        		  <li><a href="/members"><i class="glyphicon glyphicon-user"></i> Members</a></li>
+        		  <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Testimonials</a></li>
+        		  <li><a href="#"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+        		</ul>
+        </div>
+        </div>
+        </div>
+			<div class="[ col-xs-12 col-sm-9 ]">
+				<ul class="event-list">
+                    <center>
+                        <img src="../static/images/upcoming_events.png" height="20%" width="20%"></center>
+					<li>
+						<time datetime="2014-07-20">
+							<span class="day">4</span>
+							<span class="month">Jul</span>
+							<span class="year">2018</span>
+							<span class="time">ALL DAY</span>
+						</time>
+						<img alt="Convocation Day" src="../static/images/background-11.jpg" />
+						<div class="info">
+							<h2 class="title">Convocation Day</h2>
+							<p class="desc">Convocation day @ M.M.University</p>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<time datetime="2014-07-20 0000">
+							<span class="day">8</span>
+							<span class="month">Jul</span>
+							<span class="year">2018</span>
+							<span class="time">10:00 AM</span>
+						</time>
+						<div class="info">
+							<h2 class="title">Run for MMU</h2>
+							<p class="desc">An event organised by MMU for alumnus to run for MMU.<br>
+                            Must come. Must run.</p>
+							<ul>
+								<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Register for event.</a></li>
+								<li style="width:50%;"><span class="fa fa-money"></span> Donate $5.00</li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<time datetime="2014-07-20 2000">
+							<span class="day">5</span>
+							<span class="month">Jan</span>
+							<span class="year">2019</span>
+							<span class="time">8:00 PM</span>
+						</time>
+						<img alt="My 22th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
+						<div class="info">
+							<h2 class="title">Bharat's 22th Birthday!</h2>
+							<p class="desc">M.M.Continental, Mullana.</p>
+							<ul>
+								<li style="width:33%;">7 <span class="glyphicon glyphicon-ok"></span></li>
+								<li style="width:34%;">2 <span class="fa fa-question"></span></li>
+								<li style="width:33%;">120 <span class="fa fa-envelope"></span></li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<time datetime="2014-07-31 1600">
+							<span class="day">31</span>
+							<span class="month">Jan</span>
+							<span class="year">2019</span>
+							<span class="time">4:00 PM</span>
+						</time>
+						<img alt="Goa Tour!" src="http://www.thechaifetzarena.com/images/main/DL13_PiratePrincess_thumb.jpg" />
+						<div class="info">
+							<h2 class="title">Goa Tour!</h2>
+							<p class="desc"> Let's together have some fun, have some adventure.</p>
+							<ul>
+								<li style="width:33%;">$19.99 <span class="fa fa-male"></span></li>
+								<li style="width:34%;">$9.99 <span class="fa fa-child"></span></li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+    <!--footer for feeds [footer that is not fixed]-->
+        <footer id="footer">
+    <div class="footer-copyright">
+        <div class="navbar navbar-inner">
+            <p class="muted credit text-center panel-footer">
+                A Bharat Chaudhary Production.
+            </p>
+        </div>
+    </div>
+</footer>
+        <!--footer ends here-->
+        {% include "scripts.html" %}
+    </body>
+</html>

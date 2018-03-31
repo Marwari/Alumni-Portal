@@ -1,0 +1,132 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        {% include "head.html"%}
+
+        <title>Login</title>
+    </head>
+    <body class="home">
+        {% include "navbar.html" %}
+
+        <!--Login Form starts here-->
+<div class="container form-top-margin-100">
+    <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
+
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+            <img src="../static/images/alumni-first-logo.png" width="30%" height="30%">
+
+        </div>
+
+            <form class="form-horizontal" method="post">
+              {% csrf_token %}
+                        <div class="col-xs-12 col-sm-3 text-center">
+              <div class="form-group">
+                <label for="username" class="control-label"></label>
+                <div class="col-sm-12" id="username-div">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="usename-span">@</span>
+                        <input type="text" class="form-control" id="username" name="username" value="{{ username }}" placeholder="Username" aria-describedby="username-span">
+                    </div>
+                </div>
+                  <div>Not a member yet ? <a href="/signup"> Register Now</a></div>
+              </div>                 </div>
+                <div class="col-xs-12 col-sm-3 text-center">
+              <div class="form-group">
+                <label for="password" class="control-label"></label>
+                <div class="col-sm-12" id="password-div">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+                        <input type="password" class="form-control" id="password" name="password" value="{{ password }}" placeholder="Password"></div>
+                    </div>
+                  <div><a href="/profile"> Forgot Password</a></u></div>
+
+              </div></div>
+                                <div class="col-xs-12 col-sm-1 text-center">
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-3">
+                  <button type="submit" class="btn btn-success form-btn">Sign in</button>
+                </div>
+              </div></div>
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <p class="error-message">{{ message }}</p>
+        </div>
+    </div>
+        <div>
+        <img src="../static/images/Lets-Stay-Connected-300x47.png">
+        </div>
+        <div align="right">
+         <div class="container">
+		<div class="row">
+			<div class="[ col-xs-12 col-sm-offset-7 col-sm-5 ]">
+				<ul class="event-list">
+					<li>
+						<time datetime="2014-07-20">
+							<span class="day">4</span>
+							<span class="month">Jul</span>
+							<span class="year">2018</span>
+							<span class="time">ALL DAY</span>
+						</time>
+						<img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
+						<div class="info">
+							<h2 class="title">Delhi Alumni Meet</h2>
+							<p class="desc">We will be meet at delhi. </p>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<time datetime="2014-07-20 0000">
+							<span class="day">8</span>
+							<span class="month">Jul</span>
+							<span class="year">2018</span>
+							<span class="time">12:00 AM</span>
+						</time>
+						<div class="info">
+							<h2 class="title">Pune Alumni Meet</h2>
+							<p class="desc">All alumnus please come at : 56 Street, Ramesh Nagar</p>
+							<ul>
+								<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Register for event</a></li>
+								<li style="width:50%;"><span class="fa fa-money"></span> $5.00 </li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+        </div>
+        <!--Login form ends here-->
+
+        {% include "footer.html" %}
+
+        {% include "scripts.html" %}
+    </body>
+
+</html>

@@ -1,0 +1,91 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        {% include "head.html"%}
+
+        <title>Login</title>
+    </head>
+    <body class="home">
+        {% include "navbar.html" %}
+
+        <!--Login Form starts here-->
+<div class="container form-top-margin-100">
+    <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
+
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+            <img src="../static/images/alumni-first-logo.png" width="30%" height="30%"><br>
+            <div>
+        <img src="../static/images/Lets-Stay-Connected-300x47.png">
+        </div>
+        </div>
+
+         <div class="col-xs-12 col-sm-6">
+    <img src="../static/images/register_now_button_2.png" width="50%" height="50%">
+    <form class="form-horizontal" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="username" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10" id="username-div">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="username-span">@</span>
+                        <input type="text" class="form-control" id="username" name="username" value="{{ username }}" placeholder="Username" aria-describedby="username-span">
+                    </div>
+              </div>
+              <div class="form-group">
+                <label for="name" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10" id="name-div"><br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ name }}" placeholder="Name"  >
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10" id="email-div">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input type="email" class="form-control" id="email" name="email" value="{{ email }}" placeholder="Email">
+                    </div>
+                </div>
+              </div>
+              <div class="form-group" id="password-div">
+                <label for="password" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+                        <input type="password" class="form-control" id="password" name="password" value="{{ password }}" placeholder="Password">
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-5">
+                  <button type="submit" class="btn btn-success form-btn">Register</button>
+                </div>
+                <div class="col-sm-5">
+                  <a href="/login"> <button type="button" class="btn btn-primary form-btn">Login</button></a>
+                </div>
+              </div>
+              </div></form>
+        </div>
+
+    </div>
+        </div>
+        <!--Login form ends here-->
+
+        {% include "footer.html" %}
+
+        {% include "scripts.html" %}
+    </body>
+
+</html>

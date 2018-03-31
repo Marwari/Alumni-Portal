@@ -1,0 +1,137 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="sidebar-nav">
+            <div class="well" style="width:300px; padding: 8px 0;">
+        		<ul class="nav nav-list">
+        		  <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+        		  <li><a href="/post"><i class="glyphicon glyphicon-pencil"></i> Add A Post</a></li>
+                  <li><a href="/events"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
+        		  <li><a href="/members"><i class="glyphicon glyphicon-user"></i> Members</a></li>
+        		  <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Testimonials</a></li>
+        		  <li><a href="#"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+        		</ul>
+        	</div>
+        </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            {% for post in posts %}
+            <div class="panel panel-default">
+            <div class="panel-body">
+            <!--showing name of the profile and username as Name (username) -->
+            <strong> Posted by: {{ post.user.username }} </strong>
+            <p><small>[{{ post.created_on }}]</small></p>
+            <img class="img-rounded" style="display:inline-block; width:350px; height:300px;"
+                 src="{{ post.image_url }}" /><br>
+            <span  style="display:inline-block;"><i>{{ post.caption }}</i></span><br/><br/>
+            <div style="display:inline-block">
+                <form method="POST" action="/like/">
+                  {% csrf_token %}
+                  <input type="hidden" name="post" value="{{ post.id }}" />
+                    {% if post.has_liked %}
+                       <button type="submit" class="btn btn-default">
+                                <span style="color: blue;" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                       </button>
+                    {% else %}
+                    <button type="submit" class="btn btn-default">
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                       </button>
+
+                    {% endif %}
+                </form>
+            </div>
+             <div style="display:inline-block">
+                {{ post.like_count }} likes this
+            </div>
+                <div class="sharethis-inline-share-buttons"></div>
+
+            <div>
+                <form method="POST" action="/comment/">
+                    {% csrf_token %}<br>
+                    <div class="input-group">
+                        <input type="hidden" name="post" value="{{ post.id }}" />
+                     <input type="text" class="form-control" name="comment_text" placeholder="Write something good or bad here..." value="{{ comment_text }}">
+                        {{ comment_text }}
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="submit" >Comment</button>
+                    </span>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                {% for comment in post.comments %}
+                <p><b>{{ comment.user.username }} </b> <small>[{{ comment.created_on }}]:</small> {{ comment.comment_text }}</p>
+                {% endfor %}
+            </div></div></div><hr>
+
+            {% endfor %}
+        </div>
+        <div class="col-sm-3">
+<ul class="timeline">
+        <li>
+          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">I'll be there</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
+            </div>
+            <div class="timeline-body">
+              <p>MMU, I'll be there. I'll be in your mega event. #MMU</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">New Updates</h4>
+            </div>
+            <div class="timeline-body">
+                <ul>
+                <li>
+                    Live events.
+                </li>
+                <li>
+                    2. Easy Contact feature.
+                </li>
+            </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Save the date</h4>
+            </div>
+            <div class="timeline-body">
+                <ul>
+                    <li>
+                24, August : Pune Meet
+                    </li>
+                    <li>
+                        02, Sept : Delhi Meet
+                    </li>
+                    <li>
+                        22, Dec : MMU Meet
+                    </li>
+                </ul>
+              <hr>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                  <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Register for events</a></li>
+                  <li><a href="#">Send updates</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">I'm organising an event</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    </ul>
+        </div>
+    </div>
+</div>
