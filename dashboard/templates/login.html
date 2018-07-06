@@ -30,12 +30,13 @@
             <form class="form-horizontal" method="post">
               {% csrf_token %}
                         <div class="col-xs-12 col-sm-3 text-center">
+
               <div class="form-group">
                 <label for="username" class="control-label"></label>
                 <div class="col-sm-12" id="username-div">
                     <div class="input-group">
                         <span class="input-group-addon" id="usename-span">@</span>
-                        <input type="text" class="form-control" id="username" name="username" value="{{ username }}" placeholder="Username" aria-describedby="username-span">
+                        <input type="text" class="form-control" id="username" name="username" value="{{ username }}" placeholder="Username" aria-describedby="username-span" required>
                     </div>
                 </div>
                   <div>Not a member yet ? <a href="/signup"> Register Now</a></div>
@@ -46,22 +47,26 @@
                 <div class="col-sm-12" id="password-div">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
-                        <input type="password" class="form-control" id="password" name="password" value="{{ password }}" placeholder="Password"></div>
+                        <input type="password" class="form-control" id="password" name="password" value="{{ password }}" placeholder="Password" required></div>
                     </div>
-                  <div><a href="/profile"> Forgot Password</a></u></div>
+                  <div><a href="/forgot"> Forgot Password</a></u></div>
+                                  <p class="alert alert-warning class" data-dismiss="alert">{{ message }}</p>
 
               </div></div>
-                                <div class="col-xs-12 col-sm-1 text-center">
+                <div class="col-xs-12 col-sm-1 text-center">
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-3">
                   <button type="submit" class="btn btn-success form-btn">Sign in</button>
                 </div>
               </div></div>
+
             </form>
+
+
         </div>
-        <div class="col-sm-3">
-            <p class="error-message">{{ message }}</p>
-        </div>
+        <!--<div class="col-sm-3">-->
+            <!--<p class="error-message">{{ message }}</p>-->
+        <!--</div>-->
     </div>
         <div>
         <img src="../static/images/Lets-Stay-Connected-300x47.png">
