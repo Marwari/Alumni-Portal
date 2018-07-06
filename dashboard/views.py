@@ -155,11 +155,6 @@ def LogoutView(request):
     response.delete_cookie("session_token")
     return response
 
-def ProfileView(request):
-    user = CheckValidation(request)
-    if user:
-        return HttpResponse("Work in progress. Come back later.")
-    return redirect("/login/")
 def MembersView(request):
     user = CheckValidation(request)
     if user:
@@ -176,3 +171,5 @@ def ContactView(request):
     user = CheckValidation(request)
     if user:
         return render(request, 'contact_us.html')
+def ForgotView(request):
+    return render(request, 'forgot_password.html')
